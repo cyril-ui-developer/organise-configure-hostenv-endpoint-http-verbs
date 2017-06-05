@@ -1,19 +1,22 @@
 import { Injectable } from '@angular/core';
-import { EndpointConfigService } from './endpoint-config.service';
+import { HttpMethodsService } from './http-methods.service';
 import { APIEndpoints } from './api-endpoints.service';
-
-
+import { EndpointConfigService } from './endpoint-config.service';
 
 @Injectable()
 export class AppService {
 
-  constructor(endpointConfigService: EndpointConfigService ) {
-    console.log(endpointConfigService.getHostEnvironment('url') +
-    endpointConfigService.getWsMicroServiceBaseUrl()['admin'].url + APIEndpoints['loadData'].endpoint);
-    console.log(endpointConfigService.getHostEnvironment('url') +
-    endpointConfigService.getWsMicroServiceBaseUrl()['products'].url + APIEndpoints['saveData'].endpoint);
+  constructor(private httpMethodsService: HttpMethodsService, private endpointConfigService : EndpointConfigService) {
+
+    }
+
+getCustomersProfile(){
+ return this.httpMethodsService.getMethod(this.endpointConfigService.getHostEnvironment('url') +
+ APIEndpoints['loadCustomersProfile'].endpoint )
 }
 
-
-
+getCustomerProfile(custId){
+ return this.httpMethodsService.getMethod(this.endpointConfigService.getHostEnvironment('url') +
+ APIEndpoints['loadCustomersProfile'].endpoint + '/' + custId )
+}
 }

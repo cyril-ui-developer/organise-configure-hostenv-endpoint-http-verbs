@@ -22,7 +22,8 @@ private wsMicroServiceBaseUrl: Object = {
         switch (environment) {
            case'localhost':
                 serverUrl = {
-                    url: 'https://localhost:3000/xxxxx'
+                      url: 'https://demo6268701.mockable.io/'
+                    //url: 'https://localhost:3000/xxxxx'
                 };
                 break;
             case'dev':

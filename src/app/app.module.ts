@@ -5,7 +5,8 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
-import { EndpointConfigService } from './endpoint-config.service'
+import { EndpointConfigService } from './endpoint-config.service';
+import { HttpMethodsService } from './http-methods.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { EndpointConfigService } from './endpoint-config.service'
     FormsModule,
     HttpModule
   ],
-  providers: [AppService, EndpointConfigService ],
+  providers: [AppService, EndpointConfigService,HttpMethodsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

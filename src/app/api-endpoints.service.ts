@@ -6,5 +6,9 @@ export const APIEndpoints: Object = {
                                   saveData:{
                                     endpoint: '/api/save-data',
                                     msg: '.....'
+                                },
+                                  loadCustomersProfile:{
+                                    endpoint: '/api/load-customers-profile',
+                                    msg: '.....'
                                 }
-                              };
+                               };
