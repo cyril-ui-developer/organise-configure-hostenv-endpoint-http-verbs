@@ -11,12 +11,12 @@ export class AppService {
     }
 
 getCustomersProfile(){
- return this.httpMethodsService.getMethod(this.endpointConfigService.getHostEnvironment('url') +
+ return this.httpMethodsService.getAll(this.endpointConfigService.getHostEnvironment('url') +
  APIEndpoints['loadCustomersProfile'].endpoint )
 }
 
 getCustomerProfile(custId){
- return this.httpMethodsService.getMethod(this.endpointConfigService.getHostEnvironment('url') +
+ return this.httpMethodsService.getOneById(this.endpointConfigService.getHostEnvironment('url') +
  APIEndpoints['loadCustomersProfile'].endpoint + '/' + custId )
 }
 }

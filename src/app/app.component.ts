@@ -11,8 +11,8 @@ import { Observable } from 'rxjs/Observable';
 })
 export class AppComponent{
   title = 'Getting and Posting Data to Server in Angular 2 using Observable';
-  customers = [];
-  customer: Object;
+  customers: AppModel[] = [];
+  customer: AppModel;
   errorMsg: string;
 
   constructor(private appService: AppService){
@@ -32,10 +32,11 @@ fetchCustomersProfile() {
 fetchCustomerProfile(id) {
     this.appService.getCustomerProfile(id)
      .subscribe(
-                  (data: AppModel[]) => {  this.customer = data; },
+                  (data: AppModel) => {  this.customer = data; },
                   (error) =>  {this.errorMsg = error; }
                 )
 
     }
+
 
 }
