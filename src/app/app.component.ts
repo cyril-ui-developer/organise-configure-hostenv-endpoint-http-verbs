@@ -18,6 +18,7 @@ export class AppComponent{
   constructor(private appService: AppService){
     this.fetchCustomersProfile();
     this.fetchCustomerProfile('id');
+    this.addCustomer({"name":"Meekness", "gender":"M"});
 }
 
 fetchCustomersProfile() {
@@ -38,5 +39,13 @@ fetchCustomerProfile(id) {
 
     }
 
+addCustomer(customer: AppModel) {
+    this.appService.createCustomer(customer)
+                   .subscribe(
+                              (customer)  => {this.customers.push(customer)},
+                              (error) =>  {this.errorMsg = error; }
 
+                     );
+
+}
 }

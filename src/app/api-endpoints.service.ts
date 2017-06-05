@@ -10,5 +10,9 @@ export const APIEndpoints: Object = {
                                   loadCustomersProfile:{
                                     endpoint: '/api/load-customers-profile',
                                     msg: '.....'
+                                },
+                                  saveCustomerProfile:{
+                                    endpoint: '/api/save-customer-profile',
+                                    msg: '.....'
                                 }
                                };

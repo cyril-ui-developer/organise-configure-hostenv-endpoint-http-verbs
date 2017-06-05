@@ -12,11 +12,16 @@ export class AppService {
 
 getCustomersProfile(){
  return this.httpMethodsService.getAll(this.endpointConfigService.getHostEnvironment('url') +
- APIEndpoints['loadCustomersProfile'].endpoint )
+ APIEndpoints['loadCustomersProfile'].endpoint );
 }
 
 getCustomerProfile(custId){
  return this.httpMethodsService.getOneById(this.endpointConfigService.getHostEnvironment('url') +
- APIEndpoints['loadCustomersProfile'].endpoint + '/' + custId )
+ APIEndpoints['loadCustomersProfile'].endpoint + '/' + custId );
+}
+
+createCustomer(customer){
+  return this.httpMethodsService.postData(this.endpointConfigService.getHostEnvironment('url') +
+ APIEndpoints['saveCustomerProfile'].endpoint, customer );
 }
 }
